@@ -23,8 +23,7 @@ struct Combo{
         cantPorciones=xPorciones;
         Componente componentes[cantComponentes];
     }
-
-    void imprimirCombo();
+    void Combo::imprimirCombo();
 };
 
 struct BaseDatos{

@@ -12,7 +12,7 @@ void Combo::imprimirCombo(){
     cout<<"Componentes: "<< endl;
     int numComponentes=sizeof(componentes)/sizeof(componentes[0]);
     while (numComponentes!=0){
-
+        
     }
 }
 
