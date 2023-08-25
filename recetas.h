@@ -16,10 +16,12 @@ struct Componente{
 struct Combo{
     string nombre;
     int cantPorciones;
-    Componente componentes[];
+    Componente componentes[2];
 
-    Combo(){
-
+    Combo(string xNombre,int xPorciones,int cantComponentes){
+        nombre=xNombre;
+        cantPorciones=xPorciones;
+        Componente componentes[cantComponentes];
     }
 
     void imprimirCombo();

@@ -1,4 +1,4 @@
-#include "recetas.cpp";
+#include "recetas.cpp"
 
 int main(int argc, char const *argv[])
 {
@@ -12,8 +12,10 @@ int main(int argc, char const *argv[])
         cout << "7. Agregar	componente a un combo " << endl << "8. Calcular	para porciones " << endl;
         cout << "9. Salir " << endl;
         cout << "\nIngrese la opción que desea: " << endl;
+        // cin >> opcion;
         getline(cin,opcion);
+
+
     } while (opcion!="9");
-    
     return 0;
 }

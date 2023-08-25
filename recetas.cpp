@@ -1,4 +1,4 @@
-#include "recetas.h";
+#include "recetas.h"
 
 void Componente::imprimirComponente(){
     cout << "Nombre: " << nombre << endl;
@@ -7,6 +7,12 @@ void Componente::imprimirComponente(){
 }
 
 void Combo::imprimirCombo(){
-    cout<<
+    cout<<"Nombre: "<< nombre << endl;
+    cout<<"Porciones: "<< cantPorciones << endl;
+    cout<<"Componentes: "<< endl;
+    int numComponentes=sizeof(componentes)/sizeof(componentes[0]);
+    while (numComponentes!=0){
+
+    }
 }
 
