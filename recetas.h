@@ -6,31 +6,51 @@ struct Componente{
     int cantidad;
     string unidadMedida;
 
-    Componente(){
+    Componente() : cantidad(1) {} //!!!!!
 
-    }
+    Componente(string _nombre, int _cantidad, string _unidadMedida ):
+    nombre(_nombre), cantidad(_cantidad), unidadMedida(_unidadMedida){} 
 
-    void imprimirComponente();
-};
 
-struct Combo{
-    string nombre;
-    int cantPorciones;
-    Componente componentes[2];
-
-    Combo(string xNombre,int xPorciones,int cantComponentes){
-        nombre=xNombre;
-        cantPorciones=xPorciones;
-        Componente componentes[cantComponentes];
-    }
-    void Combo::imprimirCombo();
-};
-
-struct BaseDatos{
-    string nombre;
-    Combo arregloCombos[];
-
-    BaseDatos(){
-
+    void imprimirComponente(){
+        cout << "Componente: " << nombre << endl << "Cantidad: " << cantidad << endl
+        << "Unidad de medida: " << unidadMedida<<endl;
     }
 };
+
+
+
+
+
+// struct Combo{
+//     string nombre;
+//     int cantPorciones;
+//     Componente componentes[30];
+
+//     Combo() : cantPorciones(1){}//
+
+//     Combo(string xNombre,int xPorciones,int cantComponentes){
+//         nombre=xNombre;
+//         cantPorciones=xPorciones;
+//         Componente componentes[cantComponentes];
+//     }
+//     //Combo(string _nombre, int _cantPorciones, int cantidadComponentes):
+//     //nombre(_nombre), cantPorciones(_cantPorciones), componentes[_cantComponentes]){}
+    
+    
+//     void Combo::imprimirCombo();
+// };
+
+
+
+
+
+
+// struct BaseDatos{
+//     string nombre;
+//     Combo arregloCombos[];
+
+//     BaseDatos(){
+
+//     }
+// };

@@ -2,7 +2,6 @@
 
 int main(int argc, char const *argv[])
 {
-    string opcion;
     do
     {
         cout << "------------------ MENU --------------------" << endl;
