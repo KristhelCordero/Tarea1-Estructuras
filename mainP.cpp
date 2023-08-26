@@ -1,4 +1,4 @@
-#include "recetas.cpp"
+#include "recetas.h"
 
 int main(int argc, char const *argv[])
 {
