@@ -63,8 +63,8 @@ struct Combo{
         cout<<"Componentes"<<endl;
         for(int i=0; i<numComponentes;i++) {
             cout << componentes[i].nombre<<" ";
-    }
-    }
+            }
+        }
     };
 
 
