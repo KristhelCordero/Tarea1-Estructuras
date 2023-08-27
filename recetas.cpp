@@ -11,8 +11,14 @@ void Combo::imprimirCombo(){
     cout<<"Porciones: "<< cantPorciones << endl;
     cout<<"Componentes: "<< endl;
     int numComponentes=sizeof(componentes)/sizeof(componentes[0]);
-    while (numComponentes!=0){
-        
+    for(int i=0; i<numComponentes;i++) {
+        cout << componentes[i].nombre<<" ";
     }
 }
 
+void BaseDatos::imprimirBaseDatos(){
+    int numComponentes=sizeof(arregloCombos)/sizeof(arregloCombos[0]);
+    for(int i=0; i<numComponentes;i++) {
+        cout << arregloCombos[i].nombre<<" ";
+    }
+}
