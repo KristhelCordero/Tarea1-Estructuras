@@ -35,11 +35,18 @@ struct Combo{
     void imprimirCombo();
     };
 
+
 struct BaseDatos{
     string nombre;
-    BaseDatos(string xNombre, int cantidadCombos){
+    Combo arregloCombos[100];
+
+    BaseDatos():nombre("BD"){} 
+
+    BaseDatos(string xNombre, int cantidadCombos, Combo* _arregloCombos){
         nombre=xNombre;
-        Combo arregloCombos[cantidadCombos];
+        for(int i=0; i<cantidadCombos; i++){
+            arregloCombos[i]=_arregloCombos[i];
+        }
     }
     void imprimirBaseDatos();
 };

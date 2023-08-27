@@ -14,11 +14,13 @@ void Combo::imprimirCombo(){
     for(int i=0; i<numComponentes;i++) {
         cout << componentes[i].nombre<<" ";
     }
+    cout<<endl;
 }
 
 void BaseDatos::imprimirBaseDatos(){
-    // int numComponentes=sizeof(arregloCombos)/sizeof(arregloCombos[0]);
-    // for(int i=0; i<numComponentes;i++) {
-    //     cout << arregloCombos[i].nombre<<" ";
-    // }
+    int numComponentes=sizeof(arregloCombos)/sizeof(arregloCombos[0]);
+    cout << "Nombre: " << nombre << endl;
+    for(int i=0; i<numComponentes;i++) {
+        cout << arregloCombos[i].nombre << endl;
+    }
 }
