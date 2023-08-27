@@ -17,12 +17,15 @@ int main(int argc, char const *argv[])
 
     BaseDatos BD("Hipopotamo",3, combos);
     BD.imprimirBaseDatos();
-    // cout<<endl;
+    cout<<endl;
     cout<<"sisecae";
 
     agregarCombo(BD,"Combo Wombo", 3, componentes,2);
     cout<<"nosecae";
     BD.imprimirBaseDatos();
+
+    string variableloca;
+    getline(cin,variableloca);
 
 
 
