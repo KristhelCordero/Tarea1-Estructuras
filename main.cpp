@@ -2,6 +2,7 @@
 
 int main(int argc, char const *argv[])
 {
+    string opcion;
     do
     {
         cout << "------------------ MENU --------------------" << endl;
@@ -13,8 +14,6 @@ int main(int argc, char const *argv[])
         cout << "\nIngrese la opción que desea: " << endl;
         // cin >> opcion;
         getline(cin,opcion);
-
-
     } while (opcion!="9");
     return 0;
 }
