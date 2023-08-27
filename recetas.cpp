@@ -11,7 +11,7 @@ void Combo::imprimirCombo(){
     cout<<"Porciones: "<< cantPorciones << endl;
     cout<<"Componentes: "<< endl;
     for(int i=0; i<numComponentes;i++) {
-        cout << componentes[i].nombre<<" ";
+        cout <<"    -"<< componentes[i].nombre<<endl;
     }
     cout<<endl;
 }
@@ -19,6 +19,6 @@ void Combo::imprimirCombo(){
 void BaseDatos::imprimirBaseDatos(){
     cout << "Nombre: " << nombre << endl;
     for(int i=0; i<cantCombos;i++) {
-        cout << ptArray[i].nombre << endl;
+        cout <<"    -"<< ptArray[i].nombre << endl;
     }
 }

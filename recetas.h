@@ -50,7 +50,6 @@ struct BaseDatos{
         for (int i = 0; i < _cantidadCombos; ++i) {
             ptArray[i]=_ptCombos[i];
         }
-
     }
 
     void imprimirBaseDatos();
