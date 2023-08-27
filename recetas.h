@@ -52,5 +52,9 @@ struct BaseDatos{
         }
     }
 
+    void setCombo(Combo nuevoCombo){
+        ptArray[++cantCombos]= nuevoCombo;
+    }
+
     void imprimirBaseDatos();
 };

@@ -1,4 +1,4 @@
-#include "recetas.cpp"
+#include "funciones.cpp"
 
 int main(int argc, char const *argv[])
 {
@@ -16,6 +16,14 @@ int main(int argc, char const *argv[])
 
     BaseDatos BD("Hipopotamo",3, combos);
     BD.imprimirBaseDatos();
+    // cout<<endl;
+    cout<<"sisecae";
+
+    agregarCombo(BD,"Combo Wombo", 3, componentes,2);
+    cout<<"nosecae";
+    BD.imprimirBaseDatos();
+
+
 
 
 
