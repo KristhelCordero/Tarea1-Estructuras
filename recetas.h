@@ -37,10 +37,9 @@ struct Combo{
 
 struct BaseDatos{
     string nombre;
-    Combo arregloCombos[10];
     BaseDatos(string xNombre, int cantidadCombos){
         nombre=xNombre;
-        arregloCombos[cantidadCombos];
+        Combo arregloCombos[cantidadCombos];
     }
     void imprimirBaseDatos();
 };

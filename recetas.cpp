@@ -17,8 +17,8 @@ void Combo::imprimirCombo(){
 }
 
 void BaseDatos::imprimirBaseDatos(){
-    int numComponentes=sizeof(arregloCombos)/sizeof(arregloCombos[0]);
-    for(int i=0; i<numComponentes;i++) {
-        cout << arregloCombos[i].nombre<<" ";
-    }
+    // int numComponentes=sizeof(arregloCombos)/sizeof(arregloCombos[0]);
+    // for(int i=0; i<numComponentes;i++) {
+    //     cout << arregloCombos[i].nombre<<" ";
+    // }
 }

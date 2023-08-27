@@ -12,12 +12,5 @@ int main(int argc, char const *argv[])
     combo.imprimirCombo();
 
 
-    
-    
-    
-
-
-
-
     return 0;
 }
