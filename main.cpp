@@ -9,6 +9,8 @@ void modificarCombo(int cantCombos, Combo * array){
     cout << nombreActual << endl;
     cout << "\nIngrese el nuevo nombre del combo: " << endl;
     getline(cin,nuevoNombre);
+    cout << nuevoNombre << endl;
+    cout << array[1].nombre <<endl;
     for (int i=0;i<cantCombos;i++)
         if (array[i].nombre==nombreActual)
             array[i].setNombre(nuevoNombre);
