@@ -33,20 +33,25 @@ struct Combo{
         }
     }
     void imprimirCombo();
-    };
+};
 
 
 struct BaseDatos{
     string nombre;
-    Combo arregloCombos[100];
+    Combo * ptArray;
+    int cantCombos;
 
     BaseDatos():nombre("BD"){} 
 
-    BaseDatos(string xNombre, int cantidadCombos, Combo* _arregloCombos){
-        nombre=xNombre;
-        for(int i=0; i<cantidadCombos; i++){
-            arregloCombos[i]=_arregloCombos[i];
+    BaseDatos(string _Nombre, int _cantidadCombos, Combo* _ptCombos){
+        nombre=_Nombre;
+        cantCombos=_cantidadCombos;
+        ptArray= new Combo[_cantidadCombos];
+        for (int i = 0; i < _cantidadCombos; ++i) {
+            ptArray[i]=_ptCombos[i];
         }
+
     }
+
     void imprimirBaseDatos();
 };

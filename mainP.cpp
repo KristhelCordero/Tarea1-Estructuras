@@ -14,7 +14,7 @@ int main(int argc, char const *argv[])
 
     Combo combos[]={combo,comb};
 
-    BaseDatos BD("Hipopotamo", 2, combos);
+    BaseDatos BD("Hipopotamo",3, combos);
     BD.imprimirBaseDatos();
 
 
