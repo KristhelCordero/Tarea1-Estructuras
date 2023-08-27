@@ -19,16 +19,12 @@ struct Componente{
 
 
 
-
-
 struct Combo{
     string nombre;
     int cantPorciones;
     Componente componentes[30];
     int numComponentes;
 
-    // Combo(string _nombre, int _cantPorciones, int cantidadComponentes):
-    // nombre(_nombre), cantPorciones(_cantPorciones), componentes(_componentes){}
 
     Combo():cantPorciones(1){}
 
@@ -45,17 +41,6 @@ struct Combo{
         }
     }
 
-    // Combo() : cantPorciones(1){}//
-
-    // Combo(string xNombre,int xPorciones,int cantComponentes){
-    //     nombre=xNombre;
-    //     cantPorciones=xPorciones;
-    //     Componente componentes[cantComponentes];
-    // }
-
-    
-    
-    // void Combo::imprimirCombo();
 
     void imprimirCombo(){
         cout<<"Combo:"<<nombre<<endl;
@@ -78,6 +63,5 @@ struct BaseDatos{
     Combo arregloCombos[];
 
     BaseDatos(){
-
     }
 };
