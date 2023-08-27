@@ -1,11 +1,27 @@
 #include "recetas.cpp"
 
+void modificarCombo(int cantCombos, Combo * array){
+    string nuevoNombre;
+    string nombreActual;
+    cout << "------------- MODIFICAR COMBO --------------" << endl;
+    cout << "\nIngrese el nombre actual del combo: " << endl;
+    getline(cin,nombreActual);
+    cout << nombreActual << endl;
+    cout << "\nIngrese el nuevo nombre del combo: " << endl;
+    getline(cin,nuevoNombre);
+    for (int i=0;i<cantCombos;i++)
+        if (array[i].nombre==nombreActual)
+            array[i].setNombre(nuevoNombre);
+    cout << "Se modificó el nombre correctamente" << endl;
+}
 
-
+/*
 int main(int argc, char const *argv[])
 {
     int opcion;
     string opcionS;
+    int cantCombos;
+    Combo * ptArray; /////// NO ES OFICIAL, ES PARA PRUEBAS 
     do
     {
         cout << "------------------ MENU --------------------" << endl;
@@ -31,7 +47,7 @@ int main(int argc, char const *argv[])
             cout << "------------- IMPRIMIR COMBOS -------------" << endl;
             break;
         case 5:
-            cout << "------------- MODIFICAR COMBO --------------" << endl;
+            // modificarCombo(cantCombos,ptArray);    NO ES OFICIAL, ES PARA PRUEBAS 
             break;
         case 6:
             cout << "------ MODIFICAR CANTIDAD COMPONENTE ------" << endl;
@@ -49,3 +65,5 @@ int main(int argc, char const *argv[])
 
     return 0;
 }
+*/
+

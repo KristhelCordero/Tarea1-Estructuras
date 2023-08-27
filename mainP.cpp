@@ -1,4 +1,4 @@
-#include "recetas.cpp"
+#include "main.cpp"
 
 int main(int argc, char const *argv[])
 {
@@ -17,7 +17,9 @@ int main(int argc, char const *argv[])
     BaseDatos BD("Hipopotamo",3, combos);
     BD.imprimirBaseDatos();
 
-
+    modificarCombo(BD.cantCombos,combos);
+    
+    combos[1].imprimirCombo();
 
     return 0;
 }

@@ -22,3 +22,7 @@ void BaseDatos::imprimirBaseDatos(){
         cout <<"    -"<< ptArray[i].nombre << endl;
     }
 }
+
+void Combo::setNombre(string nuevoNombre){
+    nombre=nuevoNombre;
+}

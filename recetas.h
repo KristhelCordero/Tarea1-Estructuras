@@ -32,6 +32,8 @@ struct Combo{
             componentes[i]=_componentes[i];
         }
     }
+
+    void setNombre(string nuevoNombre);
     void imprimirCombo();
 };
 
