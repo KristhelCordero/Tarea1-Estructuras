@@ -39,11 +39,15 @@ struct Combo{
 struct BaseDatos{
     string nombre;
     Combo arregloCombos[100];
+    int cantidadCombos;
 
     BaseDatos():nombre("BD"){} 
 
-    BaseDatos(string xNombre, int cantidadCombos, Combo* _arregloCombos){
-        nombre=xNombre;
+    BaseDatos(string _nombre, int _cantidadCombos, Combo* _arregloCombos){
+        nombre=_nombre;
+        cantidadCombos=_cantidadCombos;
+
+
         for(int i=0; i<cantidadCombos; i++){
             arregloCombos[i]=_arregloCombos[i];
         }
