@@ -18,8 +18,7 @@ int main(int argc, char const *argv[])
     BD.imprimirBaseDatos();
 
     modificarCombo(BD.cantCombos,combos);
-    combos[1].imprimirCombo();
-
+    combos[0].imprimirCombo();
 
     return 0;
 }

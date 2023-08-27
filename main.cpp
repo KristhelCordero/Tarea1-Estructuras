@@ -6,18 +6,28 @@ void modificarCombo(int cantCombos, Combo * array){
     cout << "------------- MODIFICAR COMBO --------------" << endl;
     cout << "\nIngrese el nombre actual del combo: " << endl;
     getline(cin,nombreActual);
-    cout << nombreActual << endl;
     cout << "\nIngrese el nuevo nombre del combo: " << endl;
     getline(cin,nuevoNombre);
-    cout << nuevoNombre << endl;
-    cout << array[1].nombre <<endl;
     for (int i=0;i<cantCombos;i++)
         if (array[i].nombre==nombreActual)
             array[i].setNombre(nuevoNombre);
     cout << "Se modificó el nombre correctamente" << endl;
 }
 
-/*
+void buscarCombo(int cantCombos, Combo * array){
+    string nombre;
+    cout << "-------------- BUSCAR COMBO --------------" << endl;
+    cout << "\nIngrese el nombre del combo: " << endl;
+    getline(cin,nombre);
+    for (int i=0;i<cantCombos;i++)
+        if (array[i].nombre==nombre)
+            array[i].imprimirCombo();
+}
+
+int calcularPorciones(){
+    
+}
+
 int main(int argc, char const *argv[])
 {
     int opcion;
@@ -40,7 +50,7 @@ int main(int argc, char const *argv[])
             cout << "-------------- AGREGAR COMBO --------------" << endl;
             break;
         case 2:
-            cout << "-------------- BUSCAR COMBO --------------" << endl;
+            // buscarCombo();
             break;
         case 3:
             cout << "-------------- BORRAR COMBO --------------" << endl;
@@ -67,5 +77,5 @@ int main(int argc, char const *argv[])
 
     return 0;
 }
-*/
+
 

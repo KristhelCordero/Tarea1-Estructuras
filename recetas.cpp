@@ -7,10 +7,10 @@ void Componente::imprimirComponente(){
 }
 
 void Combo::imprimirCombo(){
-    cout<<"Nombre: "<< nombre << endl;
-    cout<<"Porciones: "<< cantPorciones << endl;
-    cout<<"Componentes: "<< endl;
-    for(int i=0; i<numComponentes;i++) {
+    cout << "Nombre: " << nombre << endl;
+    cout << "Porciones: " << cantPorciones << endl;
+    cout << "Componentes: " << endl;
+    for(int i=0; i<numComponentes;i++){
         cout <<"    -"<< componentes[i].nombre<<endl;
     }
     cout<<endl;

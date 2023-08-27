@@ -8,7 +8,7 @@ struct Componente{
 
     Componente() : cantidad(1) {} //!!!!!
 
-    Componente(string _nombre, int _cantidad, string _unidadMedida ):
+    Componente(string _nombre, int _cantidad, string _unidadMedida):
     nombre(_nombre), cantidad(_cantidad), unidadMedida(_unidadMedida){} 
 
     void imprimirComponente();
