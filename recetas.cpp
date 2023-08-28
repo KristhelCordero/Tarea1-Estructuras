@@ -22,4 +22,5 @@ void BaseDatos::imprimirBaseDatos(){
 
         cout <<"    -"<< ptArray[i].nombre << endl;
     }
+    cout<<"no se cae"<<endl;
 }
