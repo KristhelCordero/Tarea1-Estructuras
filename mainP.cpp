@@ -21,6 +21,13 @@ int main(int argc, char const *argv[])
     cout<<BD.cantCombos<<endl;
     BD.imprimirBaseDatos();
 
+    cout<<"Funcion Borrar"<<endl;
+
+    BD= borrarCombo(BD,"Combo Wombo");
+    BD.imprimirBaseDatos();
+
+
+
     string variableloca;
     getline(cin,variableloca);
 
