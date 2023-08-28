@@ -40,7 +40,7 @@ struct Combo{
 
 struct BaseDatos{
     string nombre;
-    Combo * ptArray;
+    Combo ptArray[100];
     int cantCombos;
 
     BaseDatos():nombre("BD"){} 
@@ -48,10 +48,38 @@ struct BaseDatos{
     BaseDatos(string _Nombre, int _cantidadCombos, Combo* _ptCombos){
         nombre=_Nombre;
         cantCombos=_cantidadCombos;
-        ptArray= new Combo[_cantidadCombos];
+        // ptArray= new Combo[_cantidadCombos];
         for (int i = 0; i < _cantidadCombos; ++i) {
             ptArray[i]=_ptCombos[i];
         }
+    }
+
+    void setCombo(Combo nuevoCombo){
+        cout<<nuevoCombo.nombre<<endl;
+        cout<<cantCombos<<endl;
+        cout<<sizeof(ptArray)/sizeof(ptArray[0])<<endl;
+
+
+        ptArray[cantCombos]=nuevoCombo;
+        cantCombos=cantCombos+1;
+        cout<<"si"<<endl;
+        // cout<<"si lo hace"<<endl;
+        // for(int i=0;i<cantCombos;i++){
+        //     cout<<"entra1"<<endl;
+        //     nuevoArray[i]=ptArray[i];
+        //     cout<<"sale1"<<endl;
+
+        // }
+        // cout<<"SILLEGA"<<endl;
+        // nuevoArray[cantCombos]=nuevoCombo;
+        // cout<<"llega aqui"<<endl;
+        // // ptArray= new Combo[cantCombos];
+        // for (int i = 0; i < cantCombos; ++i) {
+        //     cout<<"entra"<<endl;
+        //     ptArray[i]=nuevoArray[i];
+        //     cout<<"sale"<<endl;
+        // }
+
     }
 
     void imprimirBaseDatos();

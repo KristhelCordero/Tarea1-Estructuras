@@ -19,10 +19,12 @@ void Combo::imprimirCombo(){
 void BaseDatos::imprimirBaseDatos(){
     cout << "Nombre: " << nombre << endl;
     for(int i=0; i<cantCombos;i++) {
+
         cout <<"    -"<< ptArray[i].nombre << endl;
     }
 }
 
 void Combo::setNombre(string nuevoNombre){
     nombre=nuevoNombre;
+    cout<<"no se cae"<<endl;
 }
