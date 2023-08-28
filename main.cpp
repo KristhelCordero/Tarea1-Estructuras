@@ -1,44 +1,12 @@
 #include "recetas.cpp"
 
-void modificarCombo(int cantCombos, Combo * array){
-    string nuevoNombre;
-    string nombreActual;
-    cout << "------------- MODIFICAR COMBO --------------" << endl;
-    cout << "\nIngrese el nombre actual del combo: " << endl;
-    getline(cin,nombreActual);
-    cout << "\nIngrese el nuevo nombre del combo: " << endl;
-    getline(cin,nuevoNombre);
-    for (int i=0;i<cantCombos;i++)
-        if (array[i].nombre==nombreActual)
-            array[i].setNombre(nuevoNombre);
-    cout << "Se modificó el nombre correctamente" << endl;
-}
-
-void buscarCombo(int cantCombos, Combo * array){
-    string nombre;
-    cout << "-------------- BUSCAR COMBO --------------" << endl;
-    cout << "\nIngrese el nombre del combo: " << endl;
-    getline(cin,nombre);
-    for (int i=0;i<cantCombos;i++)
-        if (array[i].nombre==nombre)
-            array[i].imprimirCombo();
-}
-
-int calcularPorciones(Combo comboSeleccionado,int cantComponentes, int nuevaCantidad){
-    cout << "----------- CALCULAR PORCIONES ------------" << endl;
-    for (int i = 0; i < cantComponentes; i++) {
-        double cantidadNecesaria = (nuevaCantidad * 100)/comboSeleccionado.componentes[i].cantidad;
-        cout << comboSeleccionado.componentes[i].nombre << ": " << cantidadNecesaria << " " 
-        << comboSeleccionado.componentes[i].unidadMedida << "\n";
-    }
-}
-
 int main(int argc, char const *argv[])
 {
     int opcion;
     string opcionS;
     int cantCombos;
     Combo * ptArray; /////// NO ES OFICIAL, ES PARA PRUEBAS 
+    string nombre;
     do
     {
         cout << "------------------ MENU --------------------" << endl;
@@ -55,7 +23,9 @@ int main(int argc, char const *argv[])
             cout << "-------------- AGREGAR COMBO --------------" << endl;
             break;
         case 2:
-            // buscarCombo();
+            cout << "-------------- BUSCAR COMBO --------------" << endl;
+            cout << "\nIngrese el nombre del combo: " << endl;
+            getline(cin,nombre);
             break;
         case 3:
             cout << "-------------- BORRAR COMBO --------------" << endl;
