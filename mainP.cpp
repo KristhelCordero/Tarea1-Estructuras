@@ -14,14 +14,13 @@ int main(int argc, char const *argv[])
     Combo comb("OtroNombre",3,componentes,2);
 
     Combo combos[]={combo,comb};
-
-    BaseDatos BD("Hipopotamo",3, combos);
-    BD.imprimirBaseDatos();
-    cout<<endl;
-    cout<<"sisecae";
+    BaseDatos BD("Hipopotamo",2, combos);
+    
+    BD.imprimirBaseDatos(); 
+    cout<<"sisecae"<<endl;//hay que ponerle endl
 
     agregarCombo(BD,"Combo Wombo", 3, componentes,2);
-    cout<<"nosecae";
+    cout<<"nosecae"<<endl;
     BD.imprimirBaseDatos();
 
     string variableloca;
