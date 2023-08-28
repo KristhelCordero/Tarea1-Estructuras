@@ -50,9 +50,19 @@ void imprimirTodoslosCombos(BaseDatos BD){
         center(mensaje,10);
         BD.ptArray[i].imprimirCombo();
 
-    }
+    }   
+}
+
+Combo modificarCantidadComponenetes(){
 
 }
+
+Combo agregarComponente(){
+
+
+}
+
+
 
 
 
