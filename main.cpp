@@ -24,8 +24,13 @@ void buscarCombo(int cantCombos, Combo * array){
             array[i].imprimirCombo();
 }
 
-int calcularPorciones(){
-    
+int calcularPorciones(Combo comboSeleccionado,int cantComponentes, int nuevaCantidad){
+    cout << "----------- CALCULAR PORCIONES ------------" << endl;
+    for (int i = 0; i < cantComponentes; i++) {
+        double cantidadNecesaria = (nuevaCantidad * 100)/comboSeleccionado.componentes[i].cantidad;
+        cout << comboSeleccionado.componentes[i].nombre << ": " << cantidadNecesaria << " " 
+        << comboSeleccionado.componentes[i].unidadMedida << "\n";
+    }
 }
 
 int main(int argc, char const *argv[])
@@ -68,7 +73,7 @@ int main(int argc, char const *argv[])
             cout << "----------- AGREGAR COMPONENTE ------------" << endl;
             break;
         case 8:
-            cout << "----------- CALCULAR PORCIONES ------------" << endl;
+            // calcularPorciones
             break;
         default:
             break;
