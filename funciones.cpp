@@ -1,6 +1,14 @@
 #include "recetas.cpp"
 using namespace std;
 
+void center(string str, const int padding){
+    for(int i=0; i<padding;++i)cout<<"-";
+    cout<<str;
+    for(int i=0; i<padding;++i)cout<<"-";
+    cout<<""<<endl;
+    
+}
+
 
 int buscarNumeroCombo(int cantCombos, Combo * array, string nombre){
     // string nombre;
@@ -31,6 +39,18 @@ BaseDatos agregarCombo(BaseDatos BD, string nombre, int cantPorciones, Component
         BD.setCombo(combo);
     return BD;
 
+
+}
+
+void imprimirTodoslosCombos(BaseDatos BD){
+    center("Combos",15);
+
+    for(int i=0; i<BD.cantCombos;i++){
+        string mensaje="Combo "+to_string(i+1);
+        center(mensaje,10);
+        BD.ptArray[i].imprimirCombo();
+
+    }
 
 }
 

@@ -26,7 +26,7 @@ int main(int argc, char const *argv[])
     BD= borrarCombo(BD,"Combo Wombo");
     BD.imprimirBaseDatos();
 
-
+    imprimirTodoslosCombos(BD);
 
     string variableloca;
     getline(cin,variableloca);
