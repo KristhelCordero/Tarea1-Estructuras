@@ -26,8 +26,8 @@ BaseDatos borrarCombo(BaseDatos BD, string nombre){
 }
 
 BaseDatos agregarCombo(BaseDatos BD, string nombre, int cantPorciones, Componente* componentes, int numComponentes){
-        Combo combo(nombre, cantPorciones,componentes,numComponentes); 
-        BD.setCombo(combo);
+    Combo combo(nombre, cantPorciones,componentes,numComponentes); 
+    BD.setCombo(combo);
     return BD;
 }
 
@@ -40,13 +40,13 @@ void imprimirTodoslosCombos(BaseDatos BD){
     }   
 }
 
-Combo modificarCantidadComponenetes(){
-}
+// Combo modificarCantidadComponenetes(){
+// }
 
-Combo agregarComponente(){
-}
+// Combo agregarComponente(){
+// }
 
-void modificarCombo(int cantCombos, Combo * array){
+BaseDatos modificarCombo(BaseDatos BD){
     string nuevoNombre;
     string nombreActual;
     cout << "------------- MODIFICAR COMBO --------------" << endl;
@@ -54,10 +54,11 @@ void modificarCombo(int cantCombos, Combo * array){
     getline(cin,nombreActual);
     cout << "\nIngrese el nuevo nombre del combo: " << endl;
     getline(cin,nuevoNombre);
-    for (int i=0;i<cantCombos;i++)
-        if (array[i].nombre==nombreActual)
-            array[i].setNombre(nuevoNombre);
+    for (int i=0;i<BD.cantCombos;i++)
+        if (BD.ptArray[i].nombre==nombreActual)
+            BD.ptArray[i].setNombre(nuevoNombre);
     cout << "Se modificó el nombre correctamente" << endl;
+    return BD;
 }
 
 void buscarCombo(int cantCombos, Combo * array){
@@ -70,7 +71,7 @@ void buscarCombo(int cantCombos, Combo * array){
             array[i].imprimirCombo();
 }
 
-int calcularPorciones(Combo comboSeleccionado,int cantComponentes, int nuevaCantidad){
+void calcularPorciones(Combo comboSeleccionado,int cantComponentes, int nuevaCantidad){
     cout << "----------- CALCULAR PORCIONES ------------" << endl;
     for (int i = 0; i < cantComponentes; i++) {
         double cantidadNecesaria = (nuevaCantidad * 100)/comboSeleccionado.componentes[i].cantidad;

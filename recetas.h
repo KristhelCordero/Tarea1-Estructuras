@@ -58,8 +58,6 @@ struct BaseDatos{
         cout<<nuevoCombo.nombre<<endl;
         cout<<cantCombos<<endl;
         cout<<sizeof(ptArray)/sizeof(ptArray[0])<<endl;
-
-
         ptArray[cantCombos]=nuevoCombo;
         cantCombos=cantCombos+1;
         cout<<"si"<<endl;

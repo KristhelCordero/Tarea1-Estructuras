@@ -1,12 +1,23 @@
-#include "recetas.cpp"
-
+#include "funciones.cpp"
+// BaseDatos agregarComboMenu(BaseDatos BD){
+// }
 int main(int argc, char const *argv[])
 {
     int opcion;
     string opcionS;
     int cantCombos;
-    Combo * ptArray; /////// NO ES OFICIAL, ES PARA PRUEBAS 
     string nombre;
+    BaseDatos BD;
+    Componente componente;
+    string nombreComponente;
+    string unidadMedida;
+    string cantComp;
+    int cantidad;
+    string cantComponentesString;
+    int cantComponentes;
+    string cantPorc;
+    int cantPorciones;
+    int opcion2;
     do
     {
         cout << "------------------ MENU --------------------" << endl;
@@ -18,23 +29,52 @@ int main(int argc, char const *argv[])
         cout << "\nIngrese la opción que desea: " << endl;
         getline(cin,opcionS);
         opcion= stoi(opcionS);
+        Componente componentes[30];
         switch (opcion){
-        case 1:
+        case 1: /// NO SE SI NADA DE ESTO FUNCIONA AHHHHHHHHHHHHHHHHHHHHHH
             cout << "-------------- AGREGAR COMBO --------------" << endl;
+            cout << "\nIngrese el nombre del combo a agregar: " << endl;
+            getline(cin,nombre);
+            cout << "\nIngrese la cantidad de porciones del combo a agregar: " << endl;
+            getline(cin,cantPorc);
+            cantPorciones=stoi(cantPorc);
+            cout << "\nIngrese el número de componentes del combo a agregar: " << endl;
+            cout << "\nIngrese 0 para terminar: " << endl;
+            getline(cin,cantComponentesString);
+            cantComponentes=stoi(cantComponentesString);
+            for (int i=0;i<cantComponentes;i++){
+                cout<<"\nIngrese el nombre del componente #" << (i+1) <<"del combo: "<<endl;
+                getline(cin,nombreComponente);
+                if (nombreComponente=="0")
+                    break;
+                cout << "\nIngrese la cantidad de ese componente: " << endl;
+                getline(cin,cantComp);
+                cantidad= stoi(cantComp);
+                cout << "\nIngrese la unidad de medida: " << endl;
+                getline(cin,unidadMedida);
+                componentes[i]=Componente(nombreComponente,cantidad,unidadMedida);
+            }
+            BD=agregarCombo(BD,nombre,cantPorciones,componentes,cantComponentes);
             break;
         case 2:
             cout << "-------------- BUSCAR COMBO --------------" << endl;
             cout << "\nIngrese el nombre del combo: " << endl;
             getline(cin,nombre);
+            buscarCombo(BD.cantCombos,BD.ptArray);
             break;
         case 3:
             cout << "-------------- BORRAR COMBO --------------" << endl;
+            cout << "\nIngrese el nombre del combo: " << endl;
+            getline(cin,nombre);
+            BD=borrarCombo(BD,nombre);
             break;
         case 4:
             cout << "------------- IMPRIMIR COMBOS -------------" << endl;
+            BD.imprimirBaseDatos();
+            cout << "-------------------------------------------" << endl;
             break;
         case 5:
-            // modificarCombo(cantCombos,ptArray);    NO ES OFICIAL, ES PARA PRUEBAS 
+            BD=modificarCombo(BD);       //   NO ES OFICIAL, ES PARA PRUEBAS 
             break;
         case 6:
             cout << "------ MODIFICAR CANTIDAD COMPONENTE ------" << endl;
