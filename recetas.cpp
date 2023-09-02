@@ -7,19 +7,21 @@ void Componente::imprimirComponente(){
 }
 
 void Combo::imprimirCombo(){
-    cout<<"entra :3";
+    cout << " "<<endl;
     cout << "Nombre: " << nombre << endl;
-    cout << "Porciones: " << cantPorciones << endl;
+    cout << "Porciones: "<<cantPorciones<<endl;
     cout << "Componentes: " << endl;
-    for(int i=0; i<numComponentes;i++)
+    for(int i=0; i<numComponentes;i++){
         cout <<"    -"<< componentes[i].nombre<<endl;
+    }
     cout<<endl;
 }
 
 void BaseDatos::imprimirBaseDatos(){
     cout << "Nombre: " << nombre << endl;
-    for(int i=0; i<cantCombos;i++) 
+    for(int i=0; i<cantCombos; i++){
         cout <<"    -"<< ptArray[i].nombre << endl;
+    }
 }
 
 void Combo::setNombre(string nuevoNombre){

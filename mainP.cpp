@@ -42,8 +42,8 @@ int main(int argc, char const *argv[])
 
     // imprimirTodoslosCombos(BD);
 
-    // string variableloca;
-    // getline(cin,variableloca);
+    string variableloca;
+    getline(cin,variableloca);
 
     return 0;
 }
