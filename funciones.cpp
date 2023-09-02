@@ -48,12 +48,17 @@ void imprimirTodoslosCombos(BaseDatos BD){
     for(int i=0; i<BD.cantCombos;i++){
         string mensaje="Combo "+to_string(i+1);
         center(mensaje,10);
-        BD.ptArray[i].imprimirCombo();
+        // BD.ptArray[i].imprimirCombo();
 
     }   
 }
 
-Combo modificarCantidadComponenetes(){
+Combo modificarCantidadComponenete(BaseDatos BD){
+    cout<< "Ingrese el componente:"<<endl;
+    string nombreComponente;
+    getline(cin,nombreComponente);
+    cout << "Ingrese la nueva cantidad:"
+
 
 }
 
