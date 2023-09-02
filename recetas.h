@@ -54,28 +54,7 @@ struct BaseDatos{
         }
     }
 
-    void setCombo(Combo nuevoCombo){
 
-        ptArray[cantCombos]=nuevoCombo;
-        cantCombos=cantCombos+1;
-        // cout<<"si lo hace"<<endl;
-        // for(int i=0;i<cantCombos;i++){
-        //     cout<<"entra1"<<endl;
-        //     nuevoArray[i]=ptArray[i];
-        //     cout<<"sale1"<<endl;
-
-        // }
-        // cout<<"SILLEGA"<<endl;
-        // nuevoArray[cantCombos]=nuevoCombo;
-        // cout<<"llega aqui"<<endl;
-        // // ptArray= new Combo[cantCombos];
-        // for (int i = 0; i < cantCombos; ++i) {
-        //     cout<<"entra"<<endl;
-        //     ptArray[i]=nuevoArray[i];
-        //     cout<<"sale"<<endl;
-        // }
-
-    }
-
+    void agregarCombo();
     void imprimirBaseDatos();
 };

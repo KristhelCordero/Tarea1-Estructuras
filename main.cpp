@@ -33,12 +33,7 @@ int main(int argc, char const *argv[])
         switch (opcion){
         case 1: /// NO SE SI NADA DE ESTO FUNCIONA AHHHHHHHHHHHHHHHHHHHHHH
             cout << "-------------- AGREGAR COMBO --------------" << endl;
-            cout << "\nIngrese el nombre del combo a agregar: " << endl;
-            getline(cin,nombre);
-            cout << "\nIngrese la cantidad de porciones del combo a agregar: " << endl;
-            getline(cin,cantPorc);
-            cantPorciones=stoi(cantPorc);
-            cout << "\nIngrese el número de componentes del combo a agregar: " << endl;
+            
             cout << "\nIngrese 0 para terminar: " << endl;
             getline(cin,cantComponentesString);
             cantComponentes=stoi(cantComponentesString);
@@ -54,7 +49,7 @@ int main(int argc, char const *argv[])
                 getline(cin,unidadMedida);
                 componentes[i]=Componente(nombreComponente,cantidad,unidadMedida);
             }
-            BD=agregarCombo(BD,nombre,cantPorciones,componentes,cantComponentes);
+            BD.agregarCombo();
             break;
         case 2:
             cout << "-------------- BUSCAR COMBO --------------" << endl;
