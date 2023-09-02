@@ -122,6 +122,8 @@ Combo agregarComponente(Combo combo){
     Componente nuevoComponente=Componente(nombreNC, intCantidad, unidadNC);
 
     combo.componentes[combo.numComponentes]=nuevoComponente;
+
+    return combo;
 }
 
 

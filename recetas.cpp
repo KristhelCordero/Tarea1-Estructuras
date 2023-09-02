@@ -7,6 +7,7 @@ void Componente::imprimirComponente(){
 }
 
 void Combo::imprimirCombo(){
+    cout<<"entra :3";
     cout << "Nombre: " << nombre << endl;
     cout << "Porciones: " << cantPorciones << endl;
     cout << "Componentes: " << endl;
