@@ -22,6 +22,14 @@ int buscarNumeroCombo(int cantCombos, Combo * array, string nombre){
     return -1;
 }
 
+int buscarNumeroComponenete(int cantComponenetes, Componente * array, string nombre){
+    for (int i=0;i<cantComponenetes;i++){
+        if (array[i].nombre==nombre)
+            return i;
+            }
+    return -1;
+}
+
 BaseDatos borrarCombo(BaseDatos BD, string nombre){
     int numCombo=buscarNumeroCombo(BD.cantCombos, BD.ptArray, nombre);
     for (int i=0; i< BD.cantCombos-numCombo; i++){
@@ -38,8 +46,6 @@ BaseDatos agregarCombo(BaseDatos BD, string nombre, int cantPorciones, Component
         Combo combo(nombre, cantPorciones,componentes,numComponentes); 
         BD.setCombo(combo);
     return BD;
-
-
 }
 
 void imprimirTodoslosCombos(BaseDatos BD){
@@ -53,16 +59,54 @@ void imprimirTodoslosCombos(BaseDatos BD){
     }   
 }
 
-Combo modificarCantidadComponenete(BaseDatos BD){
-    cout<< "Ingrese el componente:"<<endl;
+BaseDatos modificarCantidadComponenete(BaseDatos BD){
     string nombreComponente;
-    getline(cin,nombreComponente);
-    cout << "Ingrese la nueva cantidad:"
+    string nombreCombo;
+    string nuevaCantidad;
 
+    cout<< "Ingrese nombre del combo"<<endl;
+    getline(cin,nombreCombo);
+
+    cout<< "Ingrese el componente:"<<endl;    
+    getline(cin,nombreComponente);
+
+    cout <<endl<< "Ingrese la nueva cantidad:"<<endl;
+    getline(cin,nombreComponente);
+    int intNuevaCantidad = stoi(nuevaCantidad);
+
+    int numeroCombo=buscarNumeroCombo(BD.cantCombos, BD.ptArray,nombreCombo);
+    int nuemroComponente=buscarNumeroComponenete(BD.ptArray[numeroCombo].numComponentes,
+     BD.ptArray[numeroCombo].componentes, nombreComponente);
+
+    BD.ptArray[numeroCombo].componentes[nuemroComponente].cantidad=intNuevaCantidad;
+
+    return BD;
 
 }
 
-Combo agregarComponente(){
+Combo agregarComponente(Combo combo){
+    cout<< "Ingrese el nombre del nuevo componente"<<endl;
+    string nombreNC;
+    getline(cin, nombreNC);
+
+    cout<< "Ingrese la unidad de medida del componente"<<endl;
+    string unidadNC;
+    getline(cin, unidadNC);
+
+    cout<< "Ingrese la cantidad del componente"<<endl;
+    string cantidadNC;
+    getline(cin, cantidadNC);
+    int intCantidad=stoi(cantidadNC);
+
+    Componente nuevoComponente=Componente(nombreNC, intCantidad, unidadNC);
+
+    combo.componentes[combo.numComponentes]=nuevoComponente;
+
+
+
+
+
+    
 
 
 }

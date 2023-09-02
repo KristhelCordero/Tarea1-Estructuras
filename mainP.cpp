@@ -32,6 +32,11 @@ int main(int argc, char const *argv[])
 
     imprimirTodoslosCombos(BD);
 
+
+    BD= modificarCantidadComponenete(BD);
+
+    imprimirTodoslosCombos(BD);
+
     string variableloca;
     getline(cin,variableloca);
 
