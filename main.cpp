@@ -55,7 +55,7 @@ int main(int argc, char const *argv[])
             cout << "-------------- BUSCAR COMBO --------------" << endl;
             cout << "\nIngrese el nombre del combo: " << endl;
             getline(cin,nombre);
-            buscarCombo(BD.cantCombos,BD.ptArray);
+            buscarCombo(BD.cantCombos,BD.arrayCombos);
             break;
         case 3:
             cout << "-------------- BORRAR COMBO --------------" << endl;
@@ -78,7 +78,8 @@ int main(int argc, char const *argv[])
             cout << "----------- AGREGAR COMPONENTE ------------" << endl;
             break;
         case 8:
-            // calcularPorciones
+            cout << "----------- CALCULAR PORCIONES ------------" << endl;
+            //BD
             break;
         default:
             break;
