@@ -56,6 +56,7 @@ int main(int argc, char const *argv[])
             cout << "-------------------------------------------" << endl;
             break;
         case 5:
+            cout << "------------- MODIFICAR COMBO --------------" << endl;
             BD.modificarCombo();       //   NO ES OFICIAL, ES PARA PRUEBAS 
             break;
         case 6:
