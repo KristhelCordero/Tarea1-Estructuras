@@ -7,27 +7,33 @@ void center(string str, const int padding){
     cout<<""<<endl;   
 }
 
-Componente* crearArrayComponentes(int intCantComponentes){
+
+Componente* crearArrayComponentes(int intCantComponentes) {
     string nombreComponente;
     string sumaComponente;
     int intSumaComponente;
     string unidadMedida;
 
-    Componente arrayCompCombo[intCantComponentes];
-    for (int i=0;i<intCantComponentes;i++){
-        cout<<"\nIngrese el nombre del componente #" << (i+1) <<"del combo: "<<endl;
-        getline(cin,nombreComponente);
-        if (nombreComponente=="0")
-            break;
-        cout << "\nIngrese la cantidad de ese componente: " << endl;
-        getline(cin,sumaComponente);
-        intSumaComponente= stoi(sumaComponente);
-        cout << "\nIngrese la unidad de medida: " << endl;
-        getline(cin,unidadMedida);
-        arrayCompCombo[i]=Componente(nombreComponente,intSumaComponente,unidadMedida);
-    }
-    return arrayCompCombo;
+    Componente* arrayCompCombo = new Componente[intCantComponentes];
 
+    for (int i = 0; i < intCantComponentes; i++) {
+        cout << "\nIngrese el nombre del componente #" << (i + 1) << " del combo: " << endl;
+        getline(cin, nombreComponente);
+        
+        if (nombreComponente == "0")
+            break;
+
+        cout << "\nIngrese la cantidad de ese componente: " << endl;
+        getline(cin, sumaComponente);
+        intSumaComponente = stoi(sumaComponente);
+
+        cout << "\nIngrese la unidad de medida: " << endl;
+        getline(cin, unidadMedida);
+
+        arrayCompCombo[i] = Componente(nombreComponente, intSumaComponente, unidadMedida);
+    }
+
+    return arrayCompCombo;
 }
 
 //----------------------------------COMPONENTES------------------------------
@@ -93,6 +99,23 @@ int Combo::buscarNumeroComponente(string nombre){
     return -1;
 }
 
+void Combo::modificarCantidadComponenete(){
+    string nombreComponente;
+    string nuevaCantidad;
+
+    cout<< "Ingrese el componente:"<<endl;    
+    getline(cin,nombreComponente);
+
+    cout <<endl<< "Ingrese la nueva cantidad:"<<endl;
+    getline(cin,nombreComponente);
+    int intNuevaCantidad = stoi(nuevaCantidad);
+
+    int nuemroComponente=buscarNumeroComponente(nombreComponente);
+
+    arrayComponentes[nuemroComponente].cantidad=intNuevaCantidad;
+
+}
+
 //----------------------------------BASE DE DATOS------------------------------
 int BaseDatos::buscarNumeroCombo(){
     string nombre;
@@ -124,9 +147,12 @@ void BaseDatos::agregarCombo(){
     intCantComponentes=stoi(cantComponentes);
 
     //creacion de nuevo combo
-    Combo nuevoCombo=Combo(pNombreCombo, intCantPorc, crearArrayComponentes(intCantComponentes), intCantComponentes);
+
+    Componente *ptArrayComponentes=crearArrayComponentes(intCantComponentes);
+    Combo nuevoCombo(pNombreCombo, intCantPorc, ptArrayComponentes , intCantComponentes);
     arrayCombos[cantCombos]=nuevoCombo;
     setCantCombos(++cantCombos);
+    getline(cin,cantPorc);
 }
 
 void BaseDatos::imprimirBaseDatos(){
@@ -203,19 +229,3 @@ void BaseDatos::borrarCombo(){
 
 
 
-void Combo::modificarCantidadComponenete(){
-    string nombreComponente;
-    string nuevaCantidad;
-
-    cout<< "Ingrese el componente:"<<endl;    
-    getline(cin,nombreComponente);
-
-    cout <<endl<< "Ingrese la nueva cantidad:"<<endl;
-    getline(cin,nombreComponente);
-    int intNuevaCantidad = stoi(nuevaCantidad);
-
-    int nuemroComponente=buscarNumeroComponente(nombreComponente);
-
-    arrayComponentes[nuemroComponente].cantidad=intNuevaCantidad;
-
-}

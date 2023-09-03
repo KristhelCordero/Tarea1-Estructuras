@@ -6,13 +6,27 @@ int main(int argc, char const *argv[])
     int opcion;
     string opcionS;
     string nombre;
-    BaseDatos BD;
+//-----------------------
+    Componente componente("Arstotzka",2,"Jarras");
+    Componente com;
+    com.nombre="lalala";
+
+    Componente componentes[]={componente,com};
+
+
+    Combo combo("combo", 7, componentes, 2);
+    Combo wombo("wombo", 5, componentes, 2);
+    Combo array[]={combo,wombo};
+
+    BaseDatos BD("Nombre",2,array);
+//---------------------------
     do
     {
         cout << "------------------ MENU --------------------" << endl;
         cout << "1. Agregar combo " << endl << "2. Buscar combo " << endl;
         cout << "3. Borrar combo " << endl << "4. Imprimir todos los combos" << endl;
-        cout << "5. Modificar nombre de un combo " << endl << "6. Modificar cantidad de	un componente de un combo" << endl;
+        cout << "5. Modificar nombre de un combo " << endl;
+        cout << "6. Modificar cantidad de	un componente de un combo" << endl;
         cout << "7. Agregar	componente a un combo " << endl << "8. Calcular	para porciones " << endl;
         cout << "9. Salir " << endl;
         cout << "\nIngrese la opción que desea: " << endl;
@@ -24,7 +38,9 @@ int main(int argc, char const *argv[])
             cout << "-------------- AGREGAR COMBO --------------" << endl;
             cout << "\nIngrese 0 para terminar: " << endl;
             
-            BD.agregarCombo();
+            // BD.agregarCombo();
+
+            
             break;
         case 2:
             cout << "-------------- BUSCAR COMBO --------------" << endl;
