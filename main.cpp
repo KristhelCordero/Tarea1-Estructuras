@@ -35,8 +35,8 @@ int main(int argc, char const *argv[])
             cout << "-------------- AGREGAR COMBO --------------" << endl;
             
             cout << "\nIngrese 0 para terminar: " << endl;
-            getline(cin,cantComponentesString);
-            cantComponentes=stoi(cantComponentesString);
+            
+
             for (int i=0;i<cantComponentes;i++){
                 cout<<"\nIngrese el nombre del componente #" << (i+1) <<"del combo: "<<endl;
                 getline(cin,nombreComponente);
@@ -55,7 +55,7 @@ int main(int argc, char const *argv[])
             cout << "-------------- BUSCAR COMBO --------------" << endl;
             cout << "\nIngrese el nombre del combo: " << endl;
             getline(cin,nombre);
-            buscarCombo(BD.cantCombos,BD.ptArray);
+            buscarCombo(BD.cantCombos,BD.arrayCombos);
             break;
         case 3:
             cout << "-------------- BORRAR COMBO --------------" << endl;

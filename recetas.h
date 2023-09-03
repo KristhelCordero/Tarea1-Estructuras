@@ -17,19 +17,19 @@ struct Componente{
 struct Combo{
     string nombre;
     int cantPorciones;
-    Componente componentes[30];
-    int numComponentes;
+    Componente arrayComponentes[30];
+    int cantComponentes;
 
     Combo():cantPorciones(1){}
 
-    Combo(string _nombre, int _cantPorciones, Componente* _componentes, int numComponentes)
-        : nombre(_nombre), cantPorciones(_cantPorciones), numComponentes(numComponentes) {
+    Combo(string _nombre, int _cantPorciones, Componente* _componentes, int _cantComponentes)
+        : nombre(_nombre), cantPorciones(_cantPorciones), cantComponentes(_cantComponentes) {
         // if (numComponentes > 30) {
         //     cout << "El número de componentes excede el tamaño máximo." << endl;
         //     return;
         // }                    Hay que hacer validaciones
-        for (int i = 0; i < numComponentes; ++i) {
-            componentes[i]=_componentes[i];
+        for (int i = 0; i < cantComponentes; ++i) {
+            arrayComponentes[i]=_componentes[i];
         }
     }
 
@@ -40,7 +40,7 @@ struct Combo{
 
 struct BaseDatos{
     string nombre;
-    Combo ptArray[100];
+    Combo arrayCombos[100];
     int cantCombos;
 
     BaseDatos():nombre("BD"){} 
@@ -50,7 +50,7 @@ struct BaseDatos{
         cantCombos=_cantidadCombos;
         // ptArray= new Combo[_cantidadCombos];
         for (int i = 0; i < _cantidadCombos; ++i) {
-            ptArray[i]=_ptCombos[i];
+            arrayCombos[i]=_ptCombos[i];
         }
     }
 
