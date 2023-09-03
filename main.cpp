@@ -1,4 +1,4 @@
-#include "funciones.cpp"
+#include "recetas.cpp"
 // BaseDatos agregarComboMenu(BaseDatos BD){
 // }
 int main(int argc, char const *argv[])

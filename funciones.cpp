@@ -1,12 +1,7 @@
 #include "recetas.cpp"
 using namespace std;
 
-void center(string str, const int padding){
-    for(int i=0; i<padding;++i)cout<<"-";
-    cout<<str;
-    for(int i=0; i<padding;++i)cout<<"-";
-    cout<<""<<endl;   
-}
+
 
 
 

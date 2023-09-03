@@ -1,5 +1,11 @@
 #include "recetas.h"
 //---------------------------------Funciones aparte--------------------------
+void center(string str, const int padding){
+    for(int i=0; i<padding;++i)cout<<"-";
+    cout<<str;
+    for(int i=0; i<padding;++i)cout<<"-";
+    cout<<""<<endl;   
+}
 
 Componente* crearArrayComponentes(int intCantComponentes){
     string nombreComponente;
