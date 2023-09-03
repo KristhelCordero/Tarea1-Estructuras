@@ -80,7 +80,22 @@ void Combo::agregarComponente(){
     setCantComponentes(++cantComponentes);
 }
 
+int Combo::buscarNumeroComponente(string nombre){
+    for (int i=0;i<cantComponentes;i++){
+        if (arrayComponentes[i].nombre==nombre)
+            return i;
+            }
+    return -1;
+}
+
 //----------------------------------BASE DE DATOS------------------------------
+int BaseDatos::buscarNumeroCombo(string nombre){
+    for (int i=0;i<cantCombos;i++)
+        if (arrayCombos[i].nombre==nombre)
+            return i;
+    return -1;
+}
+
 void BaseDatos::agregarCombo(){
     string pNombreCombo;
     string cantPorc;
@@ -154,4 +169,34 @@ void BaseDatos::modificarCombo(){
         if (arrayCombos[i].nombre==nombreActual)
             arrayCombos[i].setNombre(nuevoNombre);
     cout << "Se modificó el nombre correctamente" << endl;
+}
+
+
+void BaseDatos::borrarCombo(string nombre){
+    int numCombo=buscarNumeroCombo(nombre);
+    for (int i=0; i< cantCombos-numCombo; i++){
+        arrayCombos[i+numCombo]=arrayCombos[i+numCombo+1];
+        cout << arrayCombos[i+numCombo].nombre <<endl;
+    }
+    cantCombos--;
+}
+
+
+
+
+void Combo::modificarCantidadComponenete(){
+    string nombreComponente;
+    string nuevaCantidad;
+
+    cout<< "Ingrese el componente:"<<endl;    
+    getline(cin,nombreComponente);
+
+    cout <<endl<< "Ingrese la nueva cantidad:"<<endl;
+    getline(cin,nombreComponente);
+    int intNuevaCantidad = stoi(nuevaCantidad);
+
+    int nuemroComponente=buscarNumeroComponente(nombreComponente);
+
+    arrayComponentes[nuemroComponente].cantidad=intNuevaCantidad;
+
 }

@@ -33,11 +33,13 @@ struct Combo{
         }
     }
 
+    int buscarNumeroComponente(string nombre);
     void setCantComponentes(int nuevaCantComponentes);
     void agregarComponente();
     void calcularPorciones(int nuevaCantidad);
     void setNombre(string nuevoNombre);
     void imprimirCombo();
+    void modificarCantidadComponenete();
 };
 
 
@@ -56,11 +58,12 @@ struct BaseDatos{
             arrayCombos[i]=_ptCombos[i];
         }
     }
-
+    int buscarNumeroCombo(string nombre);
     void setCantCombos(int nuevaCantidadCombos);
     void modificarCombo();
     void buscarCombo();
     void encontrarCombo();
     void agregarCombo();
     void imprimirBaseDatos();
+    void borrarCombo(string nombre);
 };
