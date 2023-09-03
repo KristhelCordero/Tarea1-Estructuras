@@ -48,7 +48,7 @@ struct BaseDatos{
     Combo arrayCombos[100];
     int cantCombos;
 
-    BaseDatos():nombre("BD"){} 
+    BaseDatos():nombre("BD"),cantCombos(0){} 
 
     BaseDatos(string _Nombre, int _cantidadCombos, Combo* _ptCombos){
         nombre=_Nombre;
@@ -67,4 +67,5 @@ struct BaseDatos{
     void agregarCombo();
     void imprimirBaseDatos();
     void borrarCombo();
+    void imprimirTodoslosCombos();
 };

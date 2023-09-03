@@ -38,9 +38,9 @@ Componente* crearArrayComponentes(int intCantComponentes) {
 
 //----------------------------------COMPONENTES------------------------------
 void Componente::imprimirComponente(){
-    cout << "Nombre: " << nombre << endl;
-    cout << "Cantidad: " << cantidad << endl;
-    cout << "Unidad de medida: " << unidadMedida << endl;
+    cout << "   -> " << nombre
+    << " X " << cantidad
+    << " " << unidadMedida << endl;
 }
 
 //----------------------------------COMBOS-----------------------------------
@@ -51,7 +51,7 @@ void Combo::imprimirCombo(){
     cout << "Porciones: "<<cantPorciones<<endl;
     cout << "Componentes: " << endl;
     for(int i=0; i<cantComponentes;i++){
-        cout <<"    -"<< arrayComponentes[i].nombre<<endl;
+        arrayComponentes[i].imprimirComponente();
     }
     cout<<endl;
 }
@@ -79,11 +79,11 @@ void Combo::agregarComponente(){
     string nombreNC;
     getline(cin, nombreNC);
     cout<< "Ingrese la unidad de medida del componente: "<<endl;
-    string unidadNC;
-    getline(cin, unidadNC);
-    cout<< "Ingrese la cantidad del componente: "<<endl;
     string cantidadNC;
     getline(cin, cantidadNC);
+    cout<< "Ingrese la cantidad del componente: "<<endl;
+    string unidadNC;
+    getline(cin, unidadNC);
 
     int intCantidad=stoi(cantidadNC);
     Componente nuevoComponente=Componente(nombreNC, intCantidad, unidadNC);
@@ -96,6 +96,7 @@ int Combo::buscarNumeroComponente(string nombre){
         if (arrayComponentes[i].nombre==nombre)
             return i;
             }
+    cout<<"No se encontro el componente"<<endl;
     return -1;
 }
 
@@ -107,13 +108,12 @@ void Combo::modificarCantidadComponenete(){
     getline(cin,nombreComponente);
 
     cout <<endl<< "Ingrese la nueva cantidad:"<<endl;
-    getline(cin,nombreComponente);
+    getline(cin,nuevaCantidad);
     int intNuevaCantidad = stoi(nuevaCantidad);
 
-    int nuemroComponente=buscarNumeroComponente(nombreComponente);
+    int numeroComponente=buscarNumeroComponente(nombreComponente);
 
-    arrayComponentes[nuemroComponente].cantidad=intNuevaCantidad;
-
+    arrayComponentes[numeroComponente].cantidad=intNuevaCantidad;
 }
 
 //----------------------------------BASE DE DATOS------------------------------
@@ -124,6 +124,8 @@ int BaseDatos::buscarNumeroCombo(){
     for (int i=0;i<cantCombos;i++)
         if (arrayCombos[i].nombre==nombre)
             return i;
+
+    cout<<"No se encontró el combo buscado"<<endl;
     return -1;
 }
 
@@ -152,7 +154,6 @@ void BaseDatos::agregarCombo(){
     Combo nuevoCombo(pNombreCombo, intCantPorc, ptArrayComponentes , intCantComponentes);
     arrayCombos[cantCombos]=nuevoCombo;
     setCantCombos(++cantCombos);
-    getline(cin,cantPorc);
 }
 
 void BaseDatos::imprimirBaseDatos(){
@@ -194,12 +195,10 @@ void BaseDatos::encontrarComboComponente(){
 }
 
 void BaseDatos::buscarCombo(){
-    string nombreCombo;
-    cout << "\nIngrese el nombre del combo: " << endl;
-    getline(cin,nombreCombo);
-    for (int i=0;i<cantCombos;i++)
-        if (arrayCombos[i].nombre==nombreCombo)
-            arrayCombos[i].imprimirCombo();
+    int numeroCombo=buscarNumeroCombo();
+    if(numeroCombo!= -1){
+        arrayCombos[numeroCombo].imprimirCombo();
+    }
 }
 
 void BaseDatos::modificarCombo(){
@@ -218,12 +217,23 @@ void BaseDatos::modificarCombo(){
 
 void BaseDatos::borrarCombo(){
     int numCombo=buscarNumeroCombo();
-    for (int i=0; i< cantCombos-numCombo; i++){
-        arrayCombos[i+numCombo]=arrayCombos[i+numCombo+1];
-        cout << arrayCombos[i+numCombo].nombre <<endl;
+    if (numCombo!=-1){
+        for (int i=0; i< cantCombos-numCombo; i++){
+            arrayCombos[i+numCombo]=arrayCombos[i+numCombo+1];
+
+        }
+        cantCombos--;
+        cout << "Se borro el combo correctamente" << endl;
     }
-    cantCombos--;
-    cout << "Se borro el combo correctamente" << endl;
+}
+
+void BaseDatos::imprimirTodoslosCombos(){
+    center("Combos",15);
+    for(int i=0; i<cantCombos;i++){
+        string mensaje="Combo "+to_string(i+1);
+        center(mensaje,10);
+        arrayCombos[i].imprimirCombo();
+    }   
 }
 
 
