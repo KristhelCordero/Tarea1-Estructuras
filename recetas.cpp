@@ -89,7 +89,10 @@ int Combo::buscarNumeroComponente(string nombre){
 }
 
 //----------------------------------BASE DE DATOS------------------------------
-int BaseDatos::buscarNumeroCombo(string nombre){
+int BaseDatos::buscarNumeroCombo(){
+    string nombre;
+    cout << "\nIngrese el nombre del combo: " << endl;
+    getline(cin,nombre);
     for (int i=0;i<cantCombos;i++)
         if (arrayCombos[i].nombre==nombre)
             return i;
@@ -172,13 +175,14 @@ void BaseDatos::modificarCombo(){
 }
 
 
-void BaseDatos::borrarCombo(string nombre){
-    int numCombo=buscarNumeroCombo(nombre);
+void BaseDatos::borrarCombo(){
+    int numCombo=buscarNumeroCombo();
     for (int i=0; i< cantCombos-numCombo; i++){
         arrayCombos[i+numCombo]=arrayCombos[i+numCombo+1];
         cout << arrayCombos[i+numCombo].nombre <<endl;
     }
     cantCombos--;
+    cout << "Se borro el combo correctamente" << endl;
 }
 
 

@@ -46,9 +46,8 @@ int main(int argc, char const *argv[])
             break;
         case 3:
             cout << "-------------- BORRAR COMBO --------------" << endl;
-            cout << "\nIngrese el nombre del combo: " << endl;
-            getline(cin,nombre);
-            BD=borrarCombo(BD,nombre);
+
+            BD.borrarCombo();
             break;
         case 4:
             cout << "------------- IMPRIMIR COMBOS -------------" << endl;

@@ -58,12 +58,12 @@ struct BaseDatos{
             arrayCombos[i]=_ptCombos[i];
         }
     }
-    int buscarNumeroCombo(string nombre);
+    int buscarNumeroCombo();
     void setCantCombos(int nuevaCantidadCombos);
     void modificarCombo();
     void buscarCombo();
     void encontrarCombo();
     void agregarCombo();
     void imprimirBaseDatos();
-    void borrarCombo(string nombre);
+    void borrarCombo();
 };
