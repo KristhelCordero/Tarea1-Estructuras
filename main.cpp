@@ -1,3 +1,7 @@
+//Elaborado por: Kristhel Cordero y Kendall Piedra 
+//Elaborado en: Visual Studio Code
+
+
 #include "recetas.cpp"
 // BaseDatos agregarComboMenu(BaseDatos BD){
 // }
