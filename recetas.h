@@ -62,7 +62,8 @@ struct BaseDatos{
     void setCantCombos(int nuevaCantidadCombos);
     void modificarCombo();
     void buscarCombo();
-    void encontrarCombo();
+    void encontrarComboPorciones();
+    void encontrarComboComponente();
     void agregarCombo();
     void imprimirBaseDatos();
     void borrarCombo();

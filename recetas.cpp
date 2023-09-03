@@ -54,14 +54,13 @@ void Combo::setCantComponentes(int nuevaCantComponentes){
 }
 
 void Combo::calcularPorciones(int nuevaCantidad){
-    cout << "----------- CALCULAR PORCIONES ------------" << endl;
-
     for (int i = 0; i < cantComponentes; i++) {
         double cantidadNecesaria = (nuevaCantidad * 100)/arrayComponentes[i].cantidad;
         cout << arrayComponentes[i].nombre << ": " << cantidadNecesaria << " " 
         << arrayComponentes[i].unidadMedida << "\n";
     }
 }
+
 
 void Combo::agregarComponente(){
     cout<< "Ingrese el nombre del nuevo componente: "<<endl;
@@ -121,8 +120,7 @@ void BaseDatos::agregarCombo(){
     //creacion de nuevo combo
     Combo nuevoCombo=Combo(pNombreCombo, intCantPorc, crearArrayComponentes(intCantComponentes), intCantComponentes);
     arrayCombos[cantCombos]=nuevoCombo;
-    cantCombos=cantCombos+1;
-
+    setCantCombos(++cantCombos);
 }
 
 void BaseDatos::imprimirBaseDatos(){
@@ -136,7 +134,7 @@ void BaseDatos::setCantCombos(int nuevaCantidadCombos){
     cantCombos=nuevaCantidadCombos;
 }
 
-void BaseDatos::encontrarCombo(){
+void BaseDatos::encontrarComboPorciones(){
     string nombreCombo;
     string nuevaCantidad;
     int intNuevaCantidad;
@@ -148,6 +146,17 @@ void BaseDatos::encontrarCombo(){
     for(int i=0;i<cantCombos;i++){
         if (arrayCombos[i].nombre==nombreCombo){
             arrayCombos[i].calcularPorciones(intNuevaCantidad);
+        }
+    }
+}
+
+void BaseDatos::encontrarComboComponente(){
+    string nombreCombo;
+    cout<<"Ingrese el nombre del combo: "<<endl;
+    getline(cin,nombreCombo);
+    for(int i=0;i<cantCombos;i++){
+        if (arrayCombos[i].nombre==nombreCombo){
+            arrayCombos[i].agregarComponente();
         }
     }
 }

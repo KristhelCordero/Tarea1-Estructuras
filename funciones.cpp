@@ -35,13 +35,7 @@ void center(string str, const int padding){
 
 
 
-void Combo::calcularPorciones(int nuevaCantidad){
-    for (int i = 0; i < cantComponentes; i++) {
-        double cantidadNecesaria = (nuevaCantidad * 100)/arrayComponentes[i].cantidad;
-        cout << arrayComponentes[i].nombre << ": " << cantidadNecesaria << " " 
-        << arrayComponentes[i].unidadMedida << "\n";
-    }
-}
+
 
 
 
