@@ -67,7 +67,7 @@ void Combo::setCantComponentes(int nuevaCantComponentes){
 
 void Combo::calcularPorciones(int nuevaCantidad){
     for (int i = 0; i < cantComponentes; i++) {
-        double cantidadNecesaria = (nuevaCantidad * 100)/arrayComponentes[i].cantidad;
+        double cantidadNecesaria = ((nuevaCantidad * arrayComponentes[i].cantidad)/cantPorciones);
         cout << arrayComponentes[i].nombre << ": " << cantidadNecesaria << " " 
         << arrayComponentes[i].unidadMedida << "\n";
     }
