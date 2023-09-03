@@ -5,16 +5,8 @@ int main(int argc, char const *argv[])
 {
     int opcion;
     string opcionS;
-    int cantCombos;
-    string nombre;
-    BaseDatos BD;
-    Componente componente;
-    string nombreComponente;
-    string unidadMedida;
-    string cantComp;
+   
     int cantidad;
-    string cantComponentesString;
-    int cantComponentes;
     string cantPorc;
     int cantPorciones;
     int opcion2;
@@ -36,8 +28,6 @@ int main(int argc, char const *argv[])
             
             cout << "\nIngrese 0 para terminar: " << endl;
             
-
-
             BD.agregarCombo();
             break;
         case 2:
