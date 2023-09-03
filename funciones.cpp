@@ -19,7 +19,7 @@ int buscarNumeroComponenete(int cantComponenetes, Componente * array, string nom
     for (int i=0;i<cantComponenetes;i++){
         if (array[i].nombre==nombre)
             return i;
-            }
+    }
     return -1;
 }
 
@@ -76,13 +76,7 @@ BaseDatos modificarCantidadComponenete(BaseDatos BD){
 
 
 
-void Combo::calcularPorciones(int nuevaCantidad){
-    for (int i = 0; i < cantComponentes; i++) {
-        double cantidadNecesaria = (nuevaCantidad * 100)/arrayComponentes[i].cantidad;
-        cout << arrayComponentes[i].nombre << ": " << cantidadNecesaria << " " 
-        << arrayComponentes[i].unidadMedida << "\n";
-    }
-}
+
 
 
 

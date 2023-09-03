@@ -5,19 +5,8 @@ int main(int argc, char const *argv[])
 {
     int opcion;
     string opcionS;
-    int cantCombos;
     string nombre;
     BaseDatos BD;
-    Componente componente;
-    string nombreComponente;
-    string unidadMedida;
-    string cantComp;
-    int cantidad;
-    string cantComponentesString;
-    int cantComponentes;
-    string cantPorc;
-    int cantPorciones;
-    int opcion2;
     do
     {
         cout << "------------------ MENU --------------------" << endl;
@@ -33,11 +22,7 @@ int main(int argc, char const *argv[])
         switch (opcion){
         case 1: /// NO SE SI NADA DE ESTO FUNCIONA AHHHHHHHHHHHHHHHHHHHHHH
             cout << "-------------- AGREGAR COMBO --------------" << endl;
-            
             cout << "\nIngrese 0 para terminar: " << endl;
-            
-
-
             BD.agregarCombo();
             break;
         case 2:
@@ -64,10 +49,11 @@ int main(int argc, char const *argv[])
             break;
         case 7:
             cout << "----------- AGREGAR COMPONENTE ------------" << endl;
+            BD.encontrarComboComponente();
             break;
         case 8:
             cout << "----------- CALCULAR PORCIONES ------------" << endl;
-            BD.encontrarCombo();
+            BD.encontrarComboPorciones();
             break;
         default:
             break;
