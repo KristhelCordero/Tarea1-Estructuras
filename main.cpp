@@ -37,18 +37,7 @@ int main(int argc, char const *argv[])
             cout << "\nIngrese 0 para terminar: " << endl;
             
 
-            for (int i=0;i<cantComponentes;i++){
-                cout<<"\nIngrese el nombre del componente #" << (i+1) <<"del combo: "<<endl;
-                getline(cin,nombreComponente);
-                if (nombreComponente=="0")
-                    break;
-                cout << "\nIngrese la cantidad de ese componente: " << endl;
-                getline(cin,cantComp);
-                cantidad= stoi(cantComp);
-                cout << "\nIngrese la unidad de medida: " << endl;
-                getline(cin,unidadMedida);
-                componentes[i]=Componente(nombreComponente,cantidad,unidadMedida);
-            }
+
             BD.agregarCombo();
             break;
         case 2:

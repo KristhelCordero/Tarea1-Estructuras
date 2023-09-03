@@ -1,5 +1,28 @@
 #include "recetas.h"
+//---------------------------------Funciones aparte--------------------------
 
+Componente* crearArrayComponentes(int intCantComponentes){
+    string nombreComponente;
+    string sumaComponente;
+    int intSumaComponente;
+    string unidadMedida;
+
+    Componente arrayCompCombo[intCantComponentes];
+    for (int i=0;i<intCantComponentes;i++){
+        cout<<"\nIngrese el nombre del componente #" << (i+1) <<"del combo: "<<endl;
+        getline(cin,nombreComponente);
+        if (nombreComponente=="0")
+            break;
+        cout << "\nIngrese la cantidad de ese componente: " << endl;
+        getline(cin,sumaComponente);
+        intSumaComponente= stoi(sumaComponente);
+        cout << "\nIngrese la unidad de medida: " << endl;
+        getline(cin,unidadMedida);
+        arrayCompCombo[i]=Componente(nombreComponente,intSumaComponente,unidadMedida);
+    }
+    return arrayCompCombo;
+
+}
 
 //----------------------------------COMPONENTES------------------------------
 void Componente::imprimirComponente(){
@@ -40,6 +63,8 @@ void Combo::calcularPorciones(int nuevaCantidad){
 //----------------------------------BASE DE DATOS------------------------------
 
 
+
+
 void BaseDatos::agregarCombo(){
     string pNombreCombo;
     string cantPorc;
@@ -58,10 +83,9 @@ void BaseDatos::agregarCombo(){
     cout << "\nIngrese el número de componentes del combo a agregar: " << endl;
     getline(cin,cantComponentes);
     intCantComponentes=stoi(cantComponentes);
-    
+
     //creacion de nuevo combo
-    Componente arrayCompCombo[]={};
-    Combo nuevoCombo=Combo(pNombreCombo, intCantPorc, arrayCompCombo, intCantComponentes);
+    Combo nuevoCombo=Combo(pNombreCombo, intCantPorc, crearArrayComponentes(intCantComponentes), intCantComponentes);
     arrayCombos[cantCombos]=nuevoCombo;
     cantCombos=cantCombos+1;
 
