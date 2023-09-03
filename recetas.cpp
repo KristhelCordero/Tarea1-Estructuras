@@ -78,10 +78,10 @@ void Combo::agregarComponente(){
     cout<< "Ingrese el nombre del nuevo componente: "<<endl;
     string nombreNC;
     getline(cin, nombreNC);
-    cout<< "Ingrese la unidad de medida del componente: "<<endl;
+    cout<< "Ingrese la cantidad del componente: "<<endl;
     string cantidadNC;
     getline(cin, cantidadNC);
-    cout<< "Ingrese la cantidad del componente: "<<endl;
+    cout<< "Ingrese la unidad de medida del componente: "<<endl;
     string unidadNC;
     getline(cin, unidadNC);
 
@@ -134,7 +134,7 @@ void BaseDatos::agregarCombo(){
     string cantPorc;
     int intCantPorc;
     string cantComponentes;
-    int intCantComponentes;
+    int intCantComponentes=0;
     
     //solicitud de datos
     cout << "\nIngrese el nombre del combo a agregar: " << endl;
@@ -144,9 +144,15 @@ void BaseDatos::agregarCombo(){
     getline(cin,cantPorc);
     intCantPorc=stoi(cantPorc);
 
-    cout << "\nIngrese el número de componentes del combo a agregar: " << endl;
-    getline(cin,cantComponentes);
-    intCantComponentes=stoi(cantComponentes);
+    do{
+        if (intCantComponentes>30){
+            cout<<"no se pueden agregar mas de 30 componentes"<<endl;
+        }
+        cout << "\nIngrese el número de componentes del combo a agregar: " << endl;
+        getline(cin,cantComponentes);
+        intCantComponentes=stoi(cantComponentes);
+    }while(intCantComponentes>30);
+    
 
     //creacion de nuevo combo
 
@@ -189,7 +195,9 @@ void BaseDatos::encontrarComboComponente(){
     getline(cin,nombreCombo);
     for(int i=0;i<cantCombos;i++){
         if (arrayCombos[i].nombre==nombreCombo){
-            arrayCombos[i].agregarComponente();
+            if(arrayCombos[i].cantComponentes<30){
+                arrayCombos[i].agregarComponente();
+            }else {cout << "No se puede agregar mas de 30 componentes"<<endl;}
         }
     }
 }

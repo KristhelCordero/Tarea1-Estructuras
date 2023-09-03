@@ -6,19 +6,6 @@ int main(int argc, char const *argv[])
     int opcion;
     string opcionS;
     string nombre;
-//-----------------------
-    // Componente componente("Arstotzka",2,"Jarras");
-    // Componente com;
-    // com.nombre="lalala";
-
-    // Componente componentes[]={componente,com};
-
-
-    // Combo combo("combo", 7, componentes, 2);
-    // Combo wombo("wombo", 5, componentes, 2);
-    // Combo array[]={combo,wombo};
-
-    // BaseDatos BD("Nombre",2,array);
     BaseDatos BD;
 //---------------------------
     do
@@ -41,9 +28,12 @@ int main(int argc, char const *argv[])
         case 1: /// NO SE SI NADA DE ESTO FUNCIONA AHHHHHHHHHHHHHHHHHHHHHH
             cout << "-------------- AGREGAR COMBO --------------" << endl;
             do{
-                BD.agregarCombo();
+                if(BD.cantCombos<100){
+                    BD.agregarCombo();
+                }else {cout<<"No se pueden agregar mas de 100 combos"<<endl;}
 
-                cout<<"¿Desea continuar agregando combos?\n1 = Si\n2 = No";
+                cout<<"¿Desea continuar agregando combos?\n1 = Si\n0 = No"<<endl;
+                getline(cin,continuar);
             }while(continuar!="0");
                         
             break;
@@ -51,7 +41,9 @@ int main(int argc, char const *argv[])
             cout << "-------------- BUSCAR COMBO --------------" << endl;
             do{
                 BD.buscarCombo();
-                cout<<"¿Desea continuar buscando combos?\n1 = Si\n2 = No";
+                cout<<"¿Desea continuar buscando combos?\n1 = Si\n0 = No"<<endl;
+                getline(cin,continuar);
+
             }while(continuar!="0");
             break;
 
@@ -59,7 +51,9 @@ int main(int argc, char const *argv[])
             cout << "-------------- BORRAR COMBO --------------" << endl;
             do{
                 BD.borrarCombo();
-                cout<<"¿Desea continuar borrando combos?\n1 = Si\n2 = No";
+                cout<<"¿Desea continuar borrando combos?\n1 = Si\n0 = No"<<endl;
+                getline(cin,continuar);
+
             }while(continuar!="0");
             
             break;
@@ -74,7 +68,9 @@ int main(int argc, char const *argv[])
             do{
                 BD.modificarCombo();
 
-                cout<<"¿Desea continuar modificando combos?\n1 = Si\n2 = No";
+                cout<<"¿Desea continuar modificando combos?\n1 = Si\n0 = No"<<endl;
+                getline(cin,continuar);
+
             }while(continuar!="0");
 
             break;
@@ -83,7 +79,9 @@ int main(int argc, char const *argv[])
             do{
                 BD.arrayCombos[BD.buscarNumeroCombo()].modificarCantidadComponenete();
 
-                cout<<"¿Desea modificar otro componente?\n1 = Si\n2 = No";
+                cout<<"¿Desea modificar otro componente?\n1 = Si\n0 = No"<<endl;
+                getline(cin,continuar);
+
             }while(continuar!="0");
             
             break;
@@ -91,7 +89,9 @@ int main(int argc, char const *argv[])
             cout << "----------- AGREGAR COMPONENTE ------------" << endl;
             do{
                 BD.encontrarComboComponente();
-                cout<<"¿Desea continuar agregando componentes?\n1 = Si\n2 = No";
+                cout<<"¿Desea continuar agregando componentes?\n1 = Si\n0 = No"<<endl;
+                getline(cin,continuar);
+
             }while(continuar!="0");
 
             break;
@@ -99,7 +99,9 @@ int main(int argc, char const *argv[])
             cout << "----------- CALCULAR PORCIONES ------------" << endl;
             do{
                 BD.encontrarComboPorciones();
-                cout<<"¿Desea continuar calculando porciones?\n1 = Si\n2 = No";
+                cout<<"¿Desea continuar calculando porciones?\n1 = Si\n0 = No"<<endl;
+                getline(cin,continuar);
+
             }while(continuar!="0");
             break;
         default:
