@@ -122,12 +122,6 @@ Combo agregarComponente(Combo combo){
     return combo;
 }
 
-
-
-
-    
-
-
 void Combo::calcularPorciones(int nuevaCantidad){
     for (int i = 0; i < cantComponentes; i++) {
         double cantidadNecesaria = (nuevaCantidad * 100)/componentes[i].cantidad;
