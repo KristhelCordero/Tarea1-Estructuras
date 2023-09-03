@@ -71,12 +71,16 @@ void BaseDatos::imprimirBaseDatos(){
 
 void BaseDatos::encontrarCombo(){
     string nombreCombo;
+    string nuevaCantidad;
+    int intNuevaCantidad;
     cout<<"Ingrese el nombre del combo: "<<endl;
     getline(cin,nombreCombo);
-    
+    cout<<"Ingrese la cantidad de porciones a calcular: "<<endl;
+    getline(cin,nuevaCantidad);
+    intNuevaCantidad=stoi(nuevaCantidad);
     for(int i=0;i<cantCombos;i++){
         if (arrayCombos[i].nombre==nombreCombo){
-            arrayCombos[i].cantPorciones();
+            arrayCombos[i].calcularPorciones(intNuevaCantidad);
         }
     }
 }
