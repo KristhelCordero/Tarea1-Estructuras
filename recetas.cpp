@@ -31,8 +31,7 @@ void Componente::imprimirComponente(){
     cout << "Unidad de medida: " << unidadMedida << endl;
 }
 
-
-//----------------------------------COMBOS------------------------------
+//----------------------------------COMBOS-----------------------------------
 
 void Combo::imprimirCombo(){
     cout << " "<<endl;
@@ -47,7 +46,11 @@ void Combo::imprimirCombo(){
 
 void Combo::setNombre(string nuevoNombre){
     nombre=nuevoNombre;
-    cout<<"no se cae"<<endl;
+    cout<<" "<<endl;
+}
+
+void Combo::setCantComponentes(int nuevaCantComponentes){
+    cantComponentes=nuevaCantComponentes;
 }
 
 void Combo::calcularPorciones(int nuevaCantidad){
@@ -60,11 +63,24 @@ void Combo::calcularPorciones(int nuevaCantidad){
     }
 }
 
+void Combo::agregarComponente(){
+    cout<< "Ingrese el nombre del nuevo componente: "<<endl;
+    string nombreNC;
+    getline(cin, nombreNC);
+    cout<< "Ingrese la unidad de medida del componente: "<<endl;
+    string unidadNC;
+    getline(cin, unidadNC);
+    cout<< "Ingrese la cantidad del componente: "<<endl;
+    string cantidadNC;
+    getline(cin, cantidadNC);
+
+    int intCantidad=stoi(cantidadNC);
+    Componente nuevoComponente=Componente(nombreNC, intCantidad, unidadNC);
+    arrayComponentes[cantComponentes]=nuevoComponente;
+    setCantComponentes(++cantComponentes);
+}
+
 //----------------------------------BASE DE DATOS------------------------------
-
-
-
-
 void BaseDatos::agregarCombo(){
     string pNombreCombo;
     string cantPorc;
@@ -91,12 +107,15 @@ void BaseDatos::agregarCombo(){
 
 }
 
-
 void BaseDatos::imprimirBaseDatos(){
     cout << "Nombre: " << nombre << endl;
     for(int i=0; i<cantCombos; i++){
         cout <<"    -"<< arrayCombos[i].nombre << endl;
     }
+}
+
+void BaseDatos::setCantCombos(int nuevaCantidadCombos){
+    cantCombos=nuevaCantidadCombos;
 }
 
 void BaseDatos::encontrarCombo(){
@@ -113,4 +132,26 @@ void BaseDatos::encontrarCombo(){
             arrayCombos[i].calcularPorciones(intNuevaCantidad);
         }
     }
+}
+
+void BaseDatos::buscarCombo(){
+    string nombreCombo;
+    cout << "\nIngrese el nombre del combo: " << endl;
+    getline(cin,nombreCombo);
+    for (int i=0;i<cantCombos;i++)
+        if (arrayCombos[i].nombre==nombreCombo)
+            arrayCombos[i].imprimirCombo();
+}
+
+void BaseDatos::modificarCombo(){
+    string nuevoNombre;
+    string nombreActual;
+    cout << "\nIngrese el nombre actual del combo: " << endl;
+    getline(cin,nombreActual);
+    cout << "\nIngrese el nuevo nombre del combo: " << endl;
+    getline(cin,nuevoNombre);
+    for (int i=0;i<cantCombos;i++)
+        if (arrayCombos[i].nombre==nombreActual)
+            arrayCombos[i].setNombre(nuevoNombre);
+    cout << "Se modificó el nombre correctamente" << endl;
 }

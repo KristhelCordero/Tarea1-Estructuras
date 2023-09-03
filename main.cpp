@@ -42,9 +42,7 @@ int main(int argc, char const *argv[])
             break;
         case 2:
             cout << "-------------- BUSCAR COMBO --------------" << endl;
-            cout << "\nIngrese el nombre del combo: " << endl;
-            getline(cin,nombre);
-            buscarCombo(BD.cantCombos,BD.arrayCombos);
+            BD.buscarCombo();
             break;
         case 3:
             cout << "-------------- BORRAR COMBO --------------" << endl;
@@ -58,7 +56,7 @@ int main(int argc, char const *argv[])
             cout << "-------------------------------------------" << endl;
             break;
         case 5:
-            BD=modificarCombo(BD);       //   NO ES OFICIAL, ES PARA PRUEBAS 
+            BD.modificarCombo();       //   NO ES OFICIAL, ES PARA PRUEBAS 
             break;
         case 6:
             cout << "------ MODIFICAR CANTIDAD COMPONENTE ------" << endl;
@@ -68,7 +66,7 @@ int main(int argc, char const *argv[])
             break;
         case 8:
             cout << "----------- CALCULAR PORCIONES ------------" << endl;
-            //BD
+            BD.encontrarCombo();
             break;
         default:
             break;
