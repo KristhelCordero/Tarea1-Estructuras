@@ -36,7 +36,7 @@ int main(int argc, char const *argv[])
 
     cout<<"4"<<endl;
 
-    imprimirTodoslosCombos(BD);
+    // imprimirTodoslosCombos(BD);
 
     // BD= modificarCantidadComponenete(BD);
 

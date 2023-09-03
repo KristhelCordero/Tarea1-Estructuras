@@ -33,6 +33,8 @@ struct Combo{
         }
     }
 
+    void setCantComponentes(int nuevaCantComponentes);
+    void agregarComponente();
     void calcularPorciones(int nuevaCantidad);
     void setNombre(string nuevoNombre);
     void imprimirCombo();
@@ -55,6 +57,9 @@ struct BaseDatos{
         }
     }
 
+    void setCantCombos(int nuevaCantidadCombos);
+    void modificarCombo();
+    void buscarCombo();
     void encontrarCombo();
     void agregarCombo();
     void imprimirBaseDatos();
