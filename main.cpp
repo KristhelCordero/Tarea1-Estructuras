@@ -78,7 +78,8 @@ int main(int argc, char const *argv[])
             cout << "----------- AGREGAR COMPONENTE ------------" << endl;
             break;
         case 8:
-            // calcularPorciones
+            cout << "----------- CALCULAR PORCIONES ------------" << endl;
+            //BD
             break;
         default:
             break;

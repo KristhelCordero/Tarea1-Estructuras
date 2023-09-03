@@ -122,18 +122,11 @@ Combo agregarComponente(Combo combo){
     return combo;
 }
 
-
-
-
-    
-
-
-void calcularPorciones(Combo comboSeleccionado,int cantComponentes, int nuevaCantidad){
-    cout << "----------- CALCULAR PORCIONES ------------" << endl;
+void Combo::calcularPorciones(int nuevaCantidad){
     for (int i = 0; i < cantComponentes; i++) {
-        double cantidadNecesaria = (nuevaCantidad * 100)/comboSeleccionado.arrayComponentes[i].cantidad;
-        cout << comboSeleccionado.arrayComponentes[i].nombre << ": " << cantidadNecesaria << " " 
-        << comboSeleccionado.arrayComponentes[i].unidadMedida << "\n";
+        double cantidadNecesaria = (nuevaCantidad * 100)/arrayComponentes[i].cantidad;
+        cout << arrayComponentes[i].nombre << ": " << cantidadNecesaria << " " 
+        << arrayComponentes[i].unidadMedida << "\n";
     }
 }
 

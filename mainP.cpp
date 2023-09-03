@@ -21,7 +21,7 @@ int main(int argc, char const *argv[])
     Combo combos[]={combo,comb};
     BaseDatos BD("Hipopotamo",2, combos);
     BD.imprimirBaseDatos(); 
-    BD = agregarCombo(BD,"Combo Wombo", 3, componentes,2);
+    BD.agregarCombo();
     cout<<""<<endl;
     BD.imprimirBaseDatos();
 
