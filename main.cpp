@@ -1,4 +1,7 @@
 //Elaborado por: Kristhel Cordero y Kendall Piedra 
+//Carnets:
+//      -2023135405
+//      -2023164712
 //Elaborado en: Visual Studio Code
 
 
